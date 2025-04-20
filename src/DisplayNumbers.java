@@ -6,12 +6,14 @@ import java.util.ArrayList;
 public class DisplayNumbers {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
         ArrayList<Integer> numbers = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             numbers.add(Integer.parseInt(reader.readLine()));
         }
-        //write your code here
 
+        for (int i = numbers.size() - 1; i >= 0; i--) {
+            System.out.println(numbers.get(i));
+        }
     }
-
 }

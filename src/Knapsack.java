@@ -1,8 +1,8 @@
 public class Knapsack {
 
-    static int knapSack(int weightCap, int weights[], int values[], int i) {
+    static int knapSack(int weightCap, int [] weights, int[] values, int i) {
         int index, weight;
-        int matrix[][] = new int[i + 1][weightCap + 1];
+        int[][] matrix = new int[i + 1][weightCap + 1];
 
         for (index = 0; index <= i; index++) {
             for (weight = 0; weight <= weightCap; weight++) {
@@ -25,11 +25,11 @@ public class Knapsack {
     }
 
     public static void main(String[] args) {
-        int values[] = new int[] { 70, 20, 39, 37, 7, 5, 10 };
-        int weights[] = new int[] { 31, 10, 20, 19, 4, 3, 6 };
+        int[] values = new int[] { 70, 20, 39, 37, 7, 5, 10 };
+        int[] weights = new int[] { 31, 10, 20, 19, 4, 3, 6 };
         int weightCap = 50;
         int i = values.length;
         Knapsack myKnapsack = new Knapsack();
-        System.out.println(myKnapsack.knapSack(weightCap, weights, values, i));
+        System.out.println(knapSack(weightCap, weights, values, i));
     }
 }

@@ -7,12 +7,18 @@ public class TheEnd {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        //write your code here
-        ArrayList<String> list = new ArrayList<>();
-        list.add(reader.readLine());
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
+        ArrayList<String> strings = new ArrayList<>();
+        while (true) {
+            String string = reader.readLine();
+            if (string.equals("end")) {
+                break;
+            }
+            strings.add(string);
+        }
+
+        for (String string : strings) {
+            System.out.println(string);
         }
     }
-
 }
+

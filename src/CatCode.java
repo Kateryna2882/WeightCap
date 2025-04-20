@@ -11,12 +11,15 @@ public class CatCode {
 
         while (true) {
             String name = reader.readLine();
+            String age = reader.readLine();
+            String weight = reader.readLine();
+            String tailLength = reader.readLine();
 
             if (name == null || name.isEmpty()) {
                 break;
             }
 
-            Cat cat = new Cat(name);
+            Cat cat = new Cat(name, Integer.parseInt(age), Integer.parseInt(weight), Integer.parseInt(tailLength));
             CATS.add(cat);
         }
 
@@ -24,16 +27,16 @@ public class CatCode {
     }
 
     public static void printList() {
-        for (int i = 0; i < CATS.size(); i++) {
-            System.out.println(CATS.get(i));
+        for (Cat cat : CATS) {
+            System.out.println(cat);
         }
     }
 
     public static class Cat {
-        private String name;
-        private int age;
-        private int weight;
-        private int tailLength;
+        private final String name;
+        private final int age;
+        private final int weight;
+        private final int tailLength;
 
         Cat(String name, int age, int weight, int tailLength) {
             this.name = name;
@@ -48,4 +51,3 @@ public class CatCode {
         }
     }
 }
-

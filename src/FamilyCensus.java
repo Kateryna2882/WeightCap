@@ -1,34 +1,43 @@
 public class FamilyCensus {
     public static void main(String[] args) {
-        // write your code here
-        Human father = new Human("name", 49,true);
-        Human father1 = new Human("name", 38,true);
-        Human mother = new Human("name", 35,false);
-        Human mother1 = new Human("name", 35,false);
-        Human mother2 = new Human("name", 35,false, "father", "mother" );
-        Human mother3 = new Human("name", 39,true, "father", "mother" );
-        Human mother4 = new Human("name", 42,false, "father", "mother" );
-        Human mother5 = new Human("name", 42,true, "father", "mother" );
+        Human paternalGrandfather = new Human("Pitt", true, 61);
+        Human paternalGrandmother = new Human("Maria", false, 60);
+        Human maternalGrandfather = new Human("Alex", true, 63);
+        Human maternalGrandmother = new Human("Helen", false, 62);
+        Human father = new Human("Max", true, 35, paternalGrandfather, paternalGrandmother);
+        Human mother = new Human("Arianna", false, 30, maternalGrandfather, maternalGrandmother);
+        Human firstChild = new Human("Arnold", true, 15, father, mother);
+        Human secondChild = new Human("Silvester", false, 10, father, mother);
+        Human thirdChild = new Human("Jack", true, 5, father, mother);
+
+        System.out.println(paternalGrandfather);
+        System.out.println(paternalGrandmother);
+        System.out.println(maternalGrandfather);
+        System.out.println(maternalGrandmother);
+        System.out.println(father);
+        System.out.println(mother);
+        System.out.println(firstChild);
+        System.out.println(secondChild);
+        System.out.println(thirdChild);
     }
 
     public static class Human {
-        // write your code here
         String name;
-        int age;
         boolean sex;
-        String father ;
-        String mother;
+        int age;
+        Human father;
+        Human mother;
 
-        public Human(String name, int age, boolean sex) {
+        public Human(String name, boolean sex, int age) {
             this.name = name;
-            this.age = age;
             this.sex = sex;
+            this.age = age;
         }
 
-        public Human(String name, int age, boolean sex, String father, String mother) {
+        public Human(String name, boolean sex, int age, Human father, Human mother) {
             this.name = name;
-            this.age = age;
             this.sex = sex;
+            this.age = age;
             this.father = father;
             this.mother = mother;
         }
@@ -50,5 +59,26 @@ public class FamilyCensus {
             return text;
         }
     }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

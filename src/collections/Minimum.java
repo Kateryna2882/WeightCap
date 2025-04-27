@@ -12,14 +12,25 @@ public class Minimum {
 
     public static int getMinimum(List<Integer> list) {
         // Find the minimum here
-        return 0;
+        int min = list.get(0);
+        for (int i = 1; i < list.size(); i++) {
+            Integer current = list.get(i);
+            if (current < min) {
+                min = current;
+            }
+        }
+        return min;
     }
 
     public static List<Integer> getIntegerList() throws IOException {
         // Create and initialize a list here
         BufferedReader reader = new BufferedReader(new java.io.InputStreamReader(System.in));
-
-        return null;
+        int n = Integer.parseInt(reader.readLine());
+        List<Integer> list = new java.util.ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            list.add(Integer.parseInt(reader.readLine()));
+        }
+        return list;
     }
 
 }

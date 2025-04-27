@@ -21,9 +21,9 @@ public class MeasureTwo {
     public static long getGetTimeInMs(List<Object> list) {
         // write your code here
         Date start = new Date();
-
-
         get10000(list);
+        Date end = new Date();
+        return end.getTime() - start.getTime();
 
         // write your code here
 

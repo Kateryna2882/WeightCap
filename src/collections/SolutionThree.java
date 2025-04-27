@@ -22,34 +22,29 @@ public class SolutionThree {
     }
 
     public static void insert10000(List list) {
-        //write your code here
         for (int i = 0; i < 10000; i++) {
-            list.add(i);
-
+            list.add(0, new Object());
         }
     }
 
     public static void get10000(List list) {
-        //write your code here
         for (int i = 0; i < 10000; i++) {
-            System.out.println(list.get(i));
+            list.get(5000);
         }
-
     }
 
     public static void set10000(List list) {
-        //write your code here
         for (int i = 0; i < 10000; i++) {
-            System.out.println(list.set(i, i));
+            list.set(5000, new Object());
         }
     }
 
     public static void remove10000(List list) {
-        //write your code here
         for (int i = 0; i < 10000; i++) {
-            list.remove(i);
+            if (list.isEmpty()) {
+                return;
+            }
+            list.remove(0);
         }
-
     }
-
 }

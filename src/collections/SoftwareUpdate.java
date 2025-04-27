@@ -10,23 +10,22 @@ public class SoftwareUpdate {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        List<String> list = new ArrayList<>();
+        Map<String, String> map = new HashMap<>();
         while (true) {
-            String family = reader.readLine();
-            if (family.isEmpty()) {
+            String city = reader.readLine();
+            if (city.isEmpty()) {
                 break;
             }
+            String family = reader.readLine();
 
-            list.add(family);
+            map.put(city, family);
         }
 
-        // Read the house number
-        int houseNumber = Integer.parseInt(reader.readLine());
+        String city = reader.readLine();
 
-        if (houseNumber >= 0 && houseNumber < list.size()) {
-            String familyName = list.get(houseNumber);
+        if (map.containsKey(city)) {
+            String familyName = map.get(city);
             System.out.println(familyName);
         }
     }
-
 }

@@ -5,28 +5,34 @@ import java.util.Map;
 
 public class FirstLastName {
     public static Map<String, String> createMap() {
-        //write your code here
         Map<String, String> map = new HashMap<>();
-        map.put("Sim", "Sim");
-        map.put("Tom", "Tom");
-        map.put("Arbus", "Arbus");
-        map.put("Baby", "Baby");
-        map.put("Cat", "Cat");
-        map.put("Dog", "Dog");
-        map.put("Eat", "Eat");
-        map.put("Food", "Food");
+        map.put("Smith", "Sophia");
+        map.put("Johnson", "Isabella");
+        map.put("Williams", "Jacob");
+        map.put("Brown", "Mason");
+        map.put("Jones", "William");
+        map.put("Garcia", "Jayden");
+        map.put("Miller", "Emily");
+        map.put("Davis", "Abigail");
+        map.put("Rodriguez", "Mia");
+        map.put("Martinez", "Joshua");
         return map;
     }
 
     public static void removeFirstNameDuplicates(Map<String, String> map) {
-        //write your code here
         Map<String, String> copy = new HashMap<>(map);
-        for (Map.Entry<String, String> pair : copy.entrySet()) {
-            if (pair.getKey().equals(pair.getValue())) {
-                map.remove(pair.getKey());
+
+        for (String name : copy.values()) {
+            int count = 0;
+            for (String nameTmp : map.values()) {
+                if (nameTmp.equals(name)) {
+                    count++;
+                }
+            }
+            if (count > 1) {
+                removeItemFromMapByValue(map, name);
             }
         }
-
     }
 
     public static void removeItemFromMapByValue(Map<String, String> map, String value) {
@@ -41,5 +47,4 @@ public class FirstLastName {
     public static void main(String[] args) {
 
     }
-
 }

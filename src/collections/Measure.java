@@ -1,6 +1,7 @@
 package collections;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,12 +12,10 @@ public class Measure {
     }
 
     public static long getInsertTimeInMs(List list) {
-        // write your code here
-
+        Date start = new Date();
         insert10000(list);
-
-        // write your code here
-
+        Date end = new Date();
+        return end.getTime() - start.getTime();
     }
 
     public static void insert10000(List list) {
@@ -24,5 +23,5 @@ public class Measure {
             list.add(0, new Object());
         }
     }
-
 }
+

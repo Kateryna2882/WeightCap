@@ -1,31 +1,28 @@
 package collections;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class MethodQuartet {
     public static List getListForGet() {
-        //write your code here
-        return ;
-
+        return new ArrayList();
     }
 
     public static List getListForSet() {
-        //write your code here
-
+        return new ArrayList();
     }
 
     public static List getListForAddOrInsert() {
-        //write your code here
-
+        return new LinkedList();
     }
 
     public static List getListForRemove() {
-        //write your code here
-
+        return new LinkedList();
     }
 
     public static void main(String[] args) {
 
     }
-
 }
+

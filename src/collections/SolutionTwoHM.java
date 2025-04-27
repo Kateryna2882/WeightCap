@@ -22,7 +22,9 @@ public class SolutionTwoHM {
 
     public static void printKeys(Map<String, String> map) {
         //write your code here
-
+        for(String key : map.keySet()) {
+            System.out.println(key);
         }
     }
+}
 

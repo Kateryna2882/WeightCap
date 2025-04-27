@@ -1,6 +1,7 @@
 package collections;
 
 import java.util.Set;
+import java.util.HashSet;
 
 public class AnimalSet {
     public static void main(String[] args) {
@@ -15,31 +16,48 @@ public class AnimalSet {
     }
 
     public static Set<Cat> createCats() {
-        Set<Cat> result = new HashSet<Cat>();
-
-        //write your code here
+        Set<Cat> result = new HashSet<>();
+        result.add(new Cat());
+        result.add(new Cat());
+        result.add(new Cat());
+        result.add(new Cat());
 
         return result;
     }
 
     public static Set<Dog> createDogs() {
-        //write your code here
-        return null;
+        Set<Dog> result = new HashSet<>();
+        result.add(new Dog());
+        result.add(new Dog());
+        result.add(new Dog());
+
+        return result;
     }
 
     public static Set<Object> join(Set<Cat> cats, Set<Dog> dogs) {
-        //write your code here
-        return null;
+        Set<Object> set = new HashSet<>();
+        set.addAll(cats);
+        set.addAll(dogs);
+
+        return set;
     }
 
     public static void removeCats(Set<Object> pets, Set<Cat> cats) {
-        //write your code here
+        pets.removeAll(cats);
     }
 
     public static void printPets(Set<Object> pets) {
-        //write your code here
+        for (Object pet : pets) {
+            System.out.println(pet);
+        }
     }
 
-    //write your code here
+    public static class Cat {
+
+    }
+
+    public static class Dog {
+
+    }
 
 }

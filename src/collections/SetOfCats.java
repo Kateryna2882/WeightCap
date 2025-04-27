@@ -3,26 +3,28 @@ import java.util.HashSet;
 import java.util.Set;
 public class SetOfCats {
     public static void main(String[] args) {
-        Set<MapOfCats.Cat> cats = createCats();
-
-        //write your code here. step 3
-
+        Set<Cat> cats = createCats();
+        cats.remove(cats.iterator().next());
         printCats(cats);
     }
 
-    public static Set<MapOfCats.Cat> createCats() {
-        //write your code here. step 2
-        Set<MapOfCats.Cat> cats = new HashSet<>();
-        for (int i = 0; i < 3; i++) {
+    public static Set<Cat> createCats() {
+        Set<Cat> result = new HashSet<>();
+        result.add(new Cat());
+        result.add(new Cat());
+        result.add(new Cat());
 
+        return result;
+    }
 
+    public static void printCats(Set<Cat> cats) {
+        for (Cat cat : cats) {
+            System.out.println(cat);
         }
-        return null;
     }
 
-    public static void printCats(Set<MapOfCats.Cat> cats) {
-        // step 4
+    public static class Cat {
+
     }
 
-    // step 1
 }
